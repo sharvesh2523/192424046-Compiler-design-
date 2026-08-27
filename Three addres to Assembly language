@@ -1,0 +1,16 @@
+include <stdio.h>
+
+int main(){
+    char t[10],a[10],op,b[10]; int n;
+    printf("Enter number of TAC statements: "); scanf("%d",&n);
+    while(n--){
+        scanf("%[^=]=%[^+*/-]%c%s",t,a,&op,b);
+        printf("MOV R0,%s\n",a);
+        if(op=='+') printf("ADD R0,%s\n",b);
+        if(op=='-') printf("SUB R0,%s\n",b);
+        if(op=='*') printf("MUL R0,%s\n",b);
+        if(op=='/') printf("DIV R0,%s\n",b);
+        printf("MOV %s,R0\n",t);
+    }
+    return 0;
+}
