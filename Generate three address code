@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    char s[50];
+    int i = 0;
+
+    printf("Enter expression: ");
+    scanf("%s", s);
+
+    while(s[i] != '=')
+        i++;
+
+    char lhs = s[0];
+    char op1 = s[i+1];
+    char op = s[i+3];
+    char op2 = s[i+4];
+
+    printf("t1=%c%c%c\n", op1, op, op2);
+    printf("t2=%c+t1\n", op1);
+    printf("%c=t2\n", lhs);
+
+    return 0;
+}
